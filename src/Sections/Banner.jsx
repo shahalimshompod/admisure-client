@@ -5,10 +5,10 @@ import hatIcon from "../assets/icons/hat.png";
 const Banner = () => {
   return (
     <div
-      className="h-[850px] bg-cover bg-center"
+      className="h-[700px] bg-cover bg-center"
       style={{ backgroundImage: `url(${bannerImage})` }}
     >
-      <div className="h-full flex flex-col items-center pt-40 bg-opacity-50 text-white px-4 space-y-12">
+      <div className="h-full flex flex-col items-center pt-40 bg-opacity-50 text-white px-4 space-y-20">
         <div className="flex items-center gap-2.5">
           <img className="w-10" src={hatIcon} alt="" />
           <p className="quick text-xl font-semibold">knowledge meets innovation</p>
@@ -48,8 +48,8 @@ const Banner = () => {
         </div>
 
         {/* Heading */}
-        <h3 className="text-5xl text-center w-1/2 slab">
-          Welcome to Admisure — Your Trusted Guide to a Brighter Academic Future!
+        <h3 className="text-6xl text-center slab">
+          Welcome to Admisure <br />Your Trusted Guide to a Brighter Academic Future!
         </h3>
       </div>
     </div>
