@@ -1,26 +1,35 @@
 import React from "react";
+import { Link } from "react-router-dom";
+const CollegeCard = ({ data }) => {
+  const {
+    _id,
+    name,
+    image,
+    admissionDates,
+    events,
+    researchCount,
+    sports,
+    rating,
+  } = data;
 
-const CollegeCard = () => {
+  
+
   return (
-    <div className="card bg-base-100 w-96 shadow-sm">
-      <figure>
-        <img
-          src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-          alt="Shoes"
-        />
+    <div className="card bg-base-100 shadow-md w-full">
+      <figure className="h-48 overflow-hidden">
+        <img src={image} alt={name} className="w-full object-cover" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">
-          Card Title
-          <div className="badge badge-secondary">NEW</div>
-        </h2>
-        <p>
-          A card component has a figure, a body part, and inside body there are
-          title and actions parts
-        </p>
-        <div className="card-actions justify-end">
-          <div className="badge badge-outline">Fashion</div>
-          <div className="badge badge-outline">Products</div>
+        <h2 className="card-title slab font-bold text-xl">{name}</h2>
+        <p className="quick"><strong>Admission Dates:</strong> {admissionDates}</p>
+        <p className="quick"><strong>Events:</strong> {events?.length}</p>
+        <p className="quick"><strong>Research Count:</strong> {researchCount}</p>
+        <p className="quick"><strong>Sports:</strong> {sports?.join(", ")}</p>
+        <p className="quick"><strong>Rating:</strong> {rating} ⭐</p>
+        <div className="card-actions justify-end mt-3">
+          <Link to={`/college-details/${_id}`}>
+            <button className="btn border-none bg-[#890C25] text-white quick font-bold">Details</button>
+          </Link>
         </div>
       </div>
     </div>

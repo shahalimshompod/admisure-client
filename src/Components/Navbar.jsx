@@ -1,13 +1,14 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import sureIcon from "../assets/icons/sure.png";
-import { useState } from "react";
-import { useEffect } from "react";
 
 const Navbar = () => {
-
   // scroll functionalities
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const path = location.pathname;
+
+  console.log(path);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,10 +28,10 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className=" shadow-sm ">
+    <div className="shadow-sm">
       <div
-        className={` fixed top-0 left-0 right-0 z-50 py-4 ${
-          scrolled
+        className={`fixed top-0 left-0 right-0 z-50 py-4 ${
+          scrolled || path !== "/"
             ? "bg-[#890C25] transition ease-in"
             : "bg-transparent ease-in"
         }`}
@@ -47,26 +48,61 @@ const Navbar = () => {
 
           {/* routes */}
           <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal text-white text-lg quick font-bold">
+            <ul className="menu menu-horizontal text-white text-lg quick font-bold gap-5">
               <li>
-                <NavLink>Home</NavLink>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "bg-[#FFF4F6] text-[#890C25] rounded-md px-3 py-1"
+                      : "hover:bg-white/20 px-3 py-1 rounded-md"
+                  }
+                >
+                  Home
+                </NavLink>
               </li>
-
               <li>
-                <NavLink>Colleges</NavLink>
+                <NavLink
+                  to="/colleges"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "bg-[#FFF4F6] text-[#890C25] rounded-md px-3 py-1"
+                      : "hover:bg-white/20 px-3 py-1 rounded-md"
+                  }
+                >
+                  Colleges
+                </NavLink>
               </li>
               <li>
-                <NavLink>Admission</NavLink>
+                <NavLink
+                  to="/admission"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "bg-[#FFF4F6] text-[#890C25] rounded-md px-3 py-1"
+                      : "hover:bg-white/20 px-3 py-1 rounded-md"
+                  }
+                >
+                  Admission
+                </NavLink>
               </li>
               <li>
-                <NavLink>My College</NavLink>
+                <NavLink
+                  to="/my-college"
+                  className={({ isActive }) =>
+                    isActive
+                      ? "bg-[#FFF4F6] text-[#890C25] rounded-md px-3 py-1"
+                      : "hover:bg-white/20 px-3 py-1 rounded-md"
+                  }
+                >
+                  My College
+                </NavLink>
               </li>
             </ul>
           </div>
 
           {/* profile dropdown */}
           <div className="navbar-end">
-            <div className="dropdown dropdown-end ">
+            <div className="dropdown dropdown-end">
               <div
                 tabIndex={0}
                 role="button"
@@ -74,7 +110,7 @@ const Navbar = () => {
               >
                 <div className="w-10 rounded-full">
                   <img
-                    alt="Tailwind CSS Navbar component"
+                    alt="Profile"
                     src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
                   />
                 </div>

@@ -1,15 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CollegeCard from "../Components/CollegeCard";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 const HomeClgCardContainer = () => {
+  const axiosPublic = useAxiosPublic();
+  const [cardData, setCardData] = useState([]);
+
+  // fetch card data
+  const fetchData = async () => {
+    const res = await axiosPublic.get("/homeClgList");
+    setCardData(res?.data);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
   return (
-    <div className="flex flex-col items-center my-28">
-      <div className="mx-28">
+    <div className="flex flex-col items-center my-48">
+      <div>
         <div className="flex items-center justify-between">
           <p className="w-20 quick border px-2 py-0.5 rounded-sm text-[#890C25] border-[#890C25]">
             Colleges
           </p>
-          <a href="/colleges" className="hover:underline text-[#890C25] quick cursor-pointer">
+          <a
+            href="/colleges"
+            className="hover:underline text-[#890C25] quick cursor-pointer"
+          >
             View All
           </a>
         </div>
@@ -25,9 +42,10 @@ const HomeClgCardContainer = () => {
         </div>
       </div>
       <div className="flex items-center gap-20">
-        <CollegeCard />
-        <CollegeCard />
-        <CollegeCard />
+       
+        {
+          cardData.map((data, index) => <CollegeCard data={data} key={index} />)
+        }
       </div>
     </div>
   );
