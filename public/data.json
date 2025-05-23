@@ -1,0 +1,1167 @@
+// [
+//   {
+//     "_id": {
+//       "$oid": "682ef5783b503043b40b2cd5"
+//     },
+//     "id": 1,
+//     "name": "Harvard Medical School",
+//     "image": "https://www.ruseducation.in/wp-content/uploads/2022/01/harvard-medical-school.webp",
+//     "admissionDates": "September 1 – December 15",
+//     "events": ["Medical Innovations Summit", "Global Health Conference"],
+//     "researchHistory": ["Cancer Research", "Neuroscience Breakthroughs"],
+//     "sports": ["Basketball", "Rowing"],
+//     "rating": 4.9,
+//     "researchCount": 320,
+//     "gallery": [
+//       "https://source.unsplash.com/featured/?harvard-campus",
+//       "https://source.unsplash.com/featured/?harvard-lab"
+//     ],
+//     "papers": [
+//       {
+//         "title": "Advancements in Immunotherapy",
+//         "link": "https://example.com/papers/immunotherapy.pdf"
+//       }
+//     ],
+//     "admissionProcess": "Online application > MCAT score > Interview",
+//     "reviews": [],
+//     "summary": "A world-leading institution in medical education and research. Known for breakthroughs in cancer and neuroscience. Offers events like the Medical Innovations Summit. Admission involves an online application, MCAT scores, and an interview."
+//   },
+//   {
+//     "_id": {
+//       "$oid": "682ef5783b503043b40b2cd6"
+//     },
+//     "id": 2,
+//     "name": "Massachusetts Institute of Technology (MIT)",
+//     "image": "https://news.mit.edu/sites/default/files/images/202110/Killian-Dome-Emily-Dahl.jpg",
+//     "admissionDates": "August 15 – January 1",
+//     "events": ["TechCrunch Startup Lab", "AI & Robotics Week"],
+//     "researchHistory": ["Artificial Intelligence", "Quantum Computing"],
+//     "sports": ["Swimming", "Basketball", "Track & Field"],
+//     "rating": 4.9,
+//     "researchCount": 500,
+//     "gallery": [
+//       "https://source.unsplash.com/featured/?mit-campus",
+//       "https://source.unsplash.com/featured/?mit-research"
+//     ],
+//     "papers": [
+//       {
+//         "title": "The Future of Machine Learning",
+//         "link": "https://example.com/papers/ml-future.pdf"
+//       }
+//     ],
+//     "admissionProcess": "SAT/ACT > Essay > Interview",
+//     "reviews": [],
+//     "summary": "Globally acclaimed for engineering, technology, and AI research. Strong focus on innovation in fields like robotics and quantum computing. Hosts AI & Robotics Week. Admissions require SAT/ACT, an essay, and an interview."
+//   },
+//   {
+//     "_id": {
+//       "$oid": "682ef5783b503043b40b2cd7"
+//     },
+//     "id": 3,
+//     "name": "University of Oxford – Medical Sciences",
+//     "image": "https://mymedschool.org/wp-content/uploads/2022/05/pexels-photo-1130683-compress.jpeg",
+//     "admissionDates": "October 1 – January 10",
+//     "events": ["Biomedical Symposium", "Student Health Expo"],
+//     "researchHistory": ["Vaccine Development", "Infectious Diseases"],
+//     "sports": ["Rowing", "Football"],
+//     "rating": 4.8,
+//     "researchCount": 400,
+//     "gallery": [
+//       "https://source.unsplash.com/featured/?oxford-campus",
+//       "https://source.unsplash.com/featured/?oxford-lab"
+//     ],
+//     "papers": [
+//       {
+//         "title": "COVID-19 Vaccine Trials",
+//         "link": "https://example.com/papers/covid-vaccine.pdf"
+//       }
+//     ],
+//     "admissionProcess": "UCAS > BMAT exam > Interview",
+//     "reviews": [],
+//     "summary": "One of the oldest and most prestigious universities. Recognized for vaccine development and infectious disease research. Hosts events like Biomedical Symposium. Admission includes UCAS application, BMAT, and interview."
+//   },
+//   {
+//     "_id": {
+//       "$oid": "682ef5783b503043b40b2cd8"
+//     },
+//     "id": 4,
+//     "name": "Stanford University – School of Engineering",
+//     "image": "https://engineering.stanford.edu/sites/default/files/styles/breakpoint_2xl_2x/public/media/image/20210407_alicja_kwade_0f4a2813_0.jpg?itok=vwdBiQrb",
+//     "admissionDates": "September 10 – January 5",
+//     "events": ["Tech Fest", "Entrepreneurship Bootcamp"],
+//     "researchHistory": ["Clean Energy", "Autonomous Vehicles"],
+//     "sports": ["Tennis", "Basketball"],
+//     "rating": 4.9,
+//     "researchCount": 470,
+//     "gallery": [
+//       "https://source.unsplash.com/featured/?stanford-campus",
+//       "https://source.unsplash.com/featured/?stanford-lab"
+//     ],
+//     "papers": [
+//       {
+//         "title": "Electric Vehicle Infrastructure",
+//         "link": "https://example.com/papers/ev-infra.pdf"
+//       }
+//     ],
+//     "admissionProcess": "Common App > SAT/ACT > Interview",
+//     "reviews": [],
+//     "summary": "A hub of technological innovation, known for clean energy and autonomous vehicle research. Events like Tech Fest attract global attention. Admissions follow the Common App, SAT/ACT, and interview."
+//   },
+//   {
+//     "_id": {
+//       "$oid": "682ef5783b503043b40b2cd9"
+//     },
+//     "id": 5,
+//     "name": "Johns Hopkins School of Medicine",
+//     "image": "https://i.ytimg.com/vi/KnNaPzR-AEE/maxresdefault.jpg",
+//     "admissionDates": "August 15 – December 1",
+//     "events": ["Neurosurgery Symposium", "Global Health Hackathon"],
+//     "researchHistory": ["Genetic Disorders", "Surgical Technology"],
+//     "sports": ["Lacrosse", "Swimming"],
+//     "rating": 4.8,
+//     "researchCount": 350,
+//     "gallery": [
+//       "https://source.unsplash.com/featured/?johns-hopkins-campus",
+//       "https://source.unsplash.com/featured/?johns-hopkins-research"
+//     ],
+//     "papers": [
+//       {
+//         "title": "Gene Therapy Techniques",
+//         "link": "https://example.com/papers/gene-therapy.pdf"
+//       }
+//     ],
+//     "admissionProcess": "MCAT > AMCAS > Interview",
+//     "reviews": [],
+//     "summary": "Renowned for medical research, particularly in genetic disorders and surgical innovations. Organizes events like Global Health Hackathon. Admission process includes MCAT, AMCAS application, and interview."
+//   },
+//   {
+//     "_id": {
+//       "$oid": "682ef5783b503043b40b2cda"
+//     },
+//     "id": 6,
+//     "name": "California Institute of Technology (Caltech)",
+//     "image": "https://admissionsight.com/wp-content/uploads/2023/04/shutterstock_159061820.jpg",
+//     "admissionDates": "October 1 – January 3",
+//     "events": ["Quantum Mechanics Week", "NanoTech Expo"],
+//     "researchHistory": ["Space Engineering", "Nano Materials"],
+//     "sports": ["Track & Field", "Fencing"],
+//     "rating": 4.7,
+//     "researchCount": 290,
+//     "gallery": [
+//       "https://source.unsplash.com/featured/?caltech-campus",
+//       "https://source.unsplash.com/featured/?caltech-lab"
+//     ],
+//     "papers": [
+//       {
+//         "title": "Nanotechnology and its Future",
+//         "link": "https://example.com/papers/nano-future.pdf"
+//       }
+//     ],
+//     "admissionProcess": "Application > SAT/ACT > Interview",
+//     "reviews": [],
+//     "summary": "Famous for cutting-edge research in nanotechnology and space engineering. Hosts events like NanoTech Expo. Admission involves an application, standardized test scores, and an interview."
+//   },
+//   {
+//     "_id": {
+//       "$oid": "682ef5783b503043b40b2cdb"
+//     },
+//     "id": 7,
+//     "name": "University of Cambridge – School of Clinical Medicine",
+//     "image": "https://cambridge-biomedical.com/wp-content/uploads/2024/07/Imageslider-mb-campusoverview-3.jpg",
+//     "admissionDates": "September 20 – December 31",
+//     "events": ["Genetic Disorders Conference", "Neurobiology Meetup"],
+//     "researchHistory": ["Brain Imaging", "Cardiology"],
+//     "sports": ["Cricket", "Rowing"],
+//     "rating": 4.8,
+//     "researchCount": 360,
+//     "gallery": [
+//       "https://source.unsplash.com/featured/?cambridge-campus",
+//       "https://source.unsplash.com/featured/?cambridge-research"
+//     ],
+//     "papers": [
+//       {
+//         "title": "Understanding Brain Functions",
+//         "link": "https://example.com/papers/brain-functions.pdf"
+//       }
+//     ],
+//     "admissionProcess": "UCAS > BMAT > Interview",
+//     "reviews": [],
+//     "summary": "A top-tier UK university known for research in brain imaging and cardiology. Events include the Genetic Disorders Conference. Admissions go through UCAS, BMAT, and an interview."
+//   },
+//   {
+//     "_id": {
+//       "$oid": "682ef5783b503043b40b2cdc"
+//     },
+//     "id": 8,
+//     "name": "ETH Zurich – Department of Engineering",
+//     "image": "https://mas-mtec.ethz.ch/aboutus/eth-zurich/_jcr_content/par/fullwidthimage/image.imageformat.1286.1337144021.jpg",
+//     "admissionDates": "April 1 – July 31",
+//     "events": ["Robotics & AI Day", "Sustainable Engineering Forum"],
+//     "researchHistory": ["Robotics", "Renewable Energy"],
+//     "sports": ["Skiing", "Football"],
+//     "rating": 4.7,
+//     "researchCount": 410,
+//     "gallery": [
+//       "https://source.unsplash.com/featured/?eth-campus",
+//       "https://source.unsplash.com/featured/?eth-lab"
+//     ],
+//     "papers": [
+//       {
+//         "title": "AI Integration in Manufacturing",
+//         "link": "https://example.com/papers/ai-manufacturing.pdf"
+//       }
+//     ],
+//     "admissionProcess": "Online Application > Entrance Test",
+//     "reviews": [],
+//     "summary": "A leading European engineering school focusing on robotics and renewable energy. Known for events like Robotics & AI Day. Admissions involve an online application and an entrance test.\n\n"
+//   },
+//   {
+//     "_id": {
+//       "$oid": "682ef5783b503043b40b2cdd"
+//     },
+//     "id": 9,
+//     "name": "Imperial College London – Faculty of Medicine",
+//     "image": "https://www.medicmind.co.uk/wp-content/uploads/2020/05/imperial-1-scaled.jpeg",
+//     "admissionDates": "August 1 – October 31",
+//     "events": ["MedTech Hackathon", "Global Health Challenge"],
+//     "researchHistory": ["Tropical Diseases", "Cardiovascular Research"],
+//     "sports": ["Rugby", "Basketball"],
+//     "rating": 4.6,
+//     "researchCount": 390,
+//     "gallery": [
+//       "https://source.unsplash.com/featured/?imperial-campus",
+//       "https://source.unsplash.com/featured/?imperial-lab"
+//     ],
+//     "papers": [
+//       {
+//         "title": "Heart Disease Prevention Techniques",
+//         "link": "https://example.com/papers/heart-disease.pdf"
+//       }
+//     ],
+//     "admissionProcess": "UCAS > Interview > Aptitude Test",
+//     "reviews": [],
+//     "summary": "Specializes in medical technology and cardiovascular research. Events include the MedTech Hackathon. Admissions go through UCAS, an interview, and an aptitude test."
+//   },
+//   {
+//     "_id": {
+//       "$oid": "682ef5783b503043b40b2cde"
+//     },
+//     "id": 10,
+//     "name": "University of Tokyo – Faculty of Engineering",
+//     "image": "https://www.t.u-tokyo.ac.jp/hs-fs/hubfs/ciw/IMG_9577.2.jpg?width=2592&height=1728&name=IMG_9577.2.jpg",
+//     "admissionDates": "March 1 – June 15",
+//     "events": ["Smart City Expo", "TechX Asia"],
+//     "researchHistory": ["Earthquake-resistant Design", "Smart Grids"],
+//     "sports": ["Judo", "Archery"],
+//     "rating": 4.7,
+//     "researchCount": 330,
+//     "gallery": [
+//       "https://source.unsplash.com/featured/?tokyo-campus",
+//       "https://source.unsplash.com/featured/?tokyo-lab"
+//     ],
+//     "papers": [
+//       {
+//         "title": "Smart Grid Technologies",
+//         "link": "https://example.com/papers/smart-grid.pdf"
+//       }
+//     ],
+//     "admissionProcess": "Application > Written Exam > Interview",
+//     "reviews": [],
+//     "summary": "Top Asian university known for earthquake-resistant structures and smart grid technologies. Organizes events like Smart City Expo. Admission involves an application, a written exam, and an interview."
+//   }
+// ]
+
+[
+  {
+    "id": 1,
+    "name": "Harvard Medical School",
+    "image": "https://www.ruseducation.in/wp-content/uploads/2022/01/harvard-medical-school.webp",
+    "admissionDates": "September 1 – December 15",
+    "events": [
+      {
+        "name": "Medical Innovations Summit",
+        "description": "Annual gathering of medical professionals and researchers to discuss cutting-edge innovations in healthcare and medical technology."
+      },
+      {
+        "name": "Global Health Conference",
+        "description": "International conference addressing global health challenges, featuring speakers from WHO, CDC, and other leading organizations."
+      }
+    ],
+    "researchHistory": ["Cancer Research", "Neuroscience Breakthroughs"],
+    "sports": [
+      {
+        "name": "Basketball",
+        "details": "Competitive intercollegiate basketball program with state-of-the-art training facilities."
+      },
+      {
+        "name": "Rowing",
+        "details": "Elite rowing team with access to the Charles River for training and competitions."
+      }
+    ],
+    "rating": 4.9,
+    "researchCount": 320,
+    "gallery": [
+      "https://source.unsplash.com/featured/?harvard-campus",
+      "https://source.unsplash.com/featured/?harvard-lab"
+    ],
+    "papers": [
+      {
+        "title": "Advancements in Immunotherapy",
+        "link": "https://example.com/papers/immunotherapy.pdf"
+      }
+    ],
+    "admissionProcess": "Online application > MCAT score > Interview",
+    "admissionProcessDetails": {
+      "steps": [
+        {
+          "step": 1,
+          "description": "Complete online application through AMCAS (American Medical College Application Service)"
+        },
+        {
+          "step": 2,
+          "description": "Submit MCAT scores (minimum 520 recommended for competitive applicants)"
+        },
+        {
+          "step": 3,
+          "description": "Submit letters of recommendation (minimum 3, including 2 from science faculty)"
+        },
+        {
+          "step": 4,
+          "description": "Complete secondary application with essay questions"
+        },
+        {
+          "step": 5,
+          "description": "Participate in multiple mini-interviews (MMI format)"
+        }
+      ],
+      "requirements": {
+        "GPA": "Minimum 3.9 recommended",
+        "Prerequisites": "1 year each of Biology, Physics, Chemistry (Organic and Inorganic), Calculus, and English",
+        "Deadlines": "Primary application due November 1, secondary due December 15"
+      }
+    },
+    "reviews": [],
+    "summary": "A world-leading institution in medical education and research. Known for breakthroughs in cancer and neuroscience. Offers events like the Medical Innovations Summit. Admission involves an online application, MCAT scores, and an interview."
+  },
+  {
+    "id": 2,
+    "name": "Massachusetts Institute of Technology (MIT)",
+    "image": "https://news.mit.edu/sites/default/files/images/202110/Killian-Dome-Emily-Dahl.jpg",
+    "admissionDates": "August 15 – January 1",
+    "events": [
+      {
+        "name": "TechCrunch Startup Lab",
+        "description": "Week-long intensive program where students develop startup ideas with mentorship from TechCrunch experts and venture capitalists."
+      },
+      {
+        "name": "AI & Robotics Week",
+        "description": "Showcase of cutting-edge AI and robotics research with demonstrations, workshops, and keynote speakers from leading tech companies."
+      }
+    ],
+    "researchHistory": ["Artificial Intelligence", "Quantum Computing"],
+    "sports": [
+      {
+        "name": "Swimming",
+        "details": "NCAA Division III swimming program with Olympic-size pool and dedicated coaching staff."
+      },
+      {
+        "name": "Basketball",
+        "details": "Competitive basketball program with modern training facilities and regular matches against Ivy League schools."
+      },
+      {
+        "name": "Track & Field",
+        "details": "Comprehensive track and field program with indoor and outdoor facilities for all events."
+      }
+    ],
+    "rating": 4.9,
+    "researchCount": 500,
+    "gallery": [
+      "https://source.unsplash.com/featured/?mit-campus",
+      "https://source.unsplash.com/featured/?mit-research"
+    ],
+    "papers": [
+      {
+        "title": "The Future of Machine Learning",
+        "link": "https://example.com/papers/ml-future.pdf"
+      }
+    ],
+    "admissionProcess": "SAT/ACT > Essay > Interview",
+    "admissionProcessDetails": {
+      "steps": [
+        {
+          "step": 1,
+          "description": "Submit application through MyMIT portal (no Common App accepted)"
+        },
+        {
+          "step": 2,
+          "description": "Submit SAT (minimum 1550) or ACT (minimum 35) scores"
+        },
+        {
+          "step": 3,
+          "description": "Complete 5 short essays (100-250 words each) on provided prompts"
+        },
+        {
+          "step": 4,
+          "description": "Submit two letters of recommendation (one from math/science teacher, one from humanities teacher)"
+        },
+        {
+          "step": 5,
+          "description": "Interview with MIT alumni (optional but strongly recommended)"
+        }
+      ],
+      "requirements": {
+        "GPA": "No minimum, but most admitted students have 4.0 or equivalent",
+        "Prerequisites": "Strong background in math and science, including calculus and physics",
+        "Deadlines": "Early Action November 1, Regular Action January 1"
+      }
+    },
+    "reviews": [],
+    "summary": "Globally acclaimed for engineering, technology, and AI research. Strong focus on innovation in fields like robotics and quantum computing. Hosts AI & Robotics Week. Admissions require SAT/ACT, an essay, and an interview."
+  },
+  {
+    "id": 3,
+    "name": "University of Oxford – Medical Sciences",
+    "image": "https://mymedschool.org/wp-content/uploads/2022/05/pexels-photo-1130683-compress.jpeg",
+    "admissionDates": "October 1 – January 10",
+    "events": [
+      {
+        "name": "Biomedical Symposium",
+        "description": "Annual gathering of biomedical researchers presenting groundbreaking studies in human health and disease."
+      },
+      {
+        "name": "Student Health Expo",
+        "description": "Interactive event showcasing student research projects and innovations in healthcare delivery."
+      }
+    ],
+    "researchHistory": ["Vaccine Development", "Infectious Diseases"],
+    "sports": [
+      {
+        "name": "Rowing",
+        "details": "Historic rowing program with access to the River Thames and annual competition against Cambridge."
+      },
+      {
+        "name": "Football",
+        "details": "Competitive football (soccer) program with matches against other UK universities and local clubs."
+      }
+    ],
+    "rating": 4.8,
+    "researchCount": 400,
+    "gallery": [
+      "https://source.unsplash.com/featured/?oxford-campus",
+      "https://source.unsplash.com/featured/?oxford-lab"
+    ],
+    "papers": [
+      {
+        "title": "COVID-19 Vaccine Trials",
+        "link": "https://example.com/papers/covid-vaccine.pdf"
+      }
+    ],
+    "admissionProcess": "UCAS > BMAT exam > Interview",
+    "admissionProcessDetails": {
+      "steps": [
+        {
+          "step": 1,
+          "description": "Submit UCAS application by October 15 deadline"
+        },
+        {
+          "step": 2,
+          "description": "Register for and take the BMAT (BioMedical Admissions Test) in November"
+        },
+        {
+          "step": 3,
+          "description": "Submit academic transcripts and personal statement"
+        },
+        {
+          "step": 4,
+          "description": "Participate in Oxford's rigorous interview process (typically in December)"
+        },
+        {
+          "step": 5,
+          "description": "Receive conditional offer based on A-level or IB predicted grades"
+        }
+      ],
+      "requirements": {
+        "Grades": "A*AA at A-level (including Chemistry and another science) or equivalent",
+        "BMAT": "Competitive score typically in top 20% of test-takers",
+        "Deadlines": "UCAS October 15, BMAT November"
+      }
+    },
+    "reviews": [],
+    "summary": "One of the oldest and most prestigious universities. Recognized for vaccine development and infectious disease research. Hosts events like Biomedical Symposium. Admission includes UCAS application, BMAT, and interview."
+  },
+  {
+    "id": 4,
+    "name": "Stanford University – School of Engineering",
+    "image": "https://engineering.stanford.edu/sites/default/files/styles/breakpoint_2xl_2x/public/media/image/20210407_alicja_kwade_0f4a2813_0.jpg?itok=vwdBiQrb",
+    "admissionDates": "September 10 – January 5",
+    "events": [
+      {
+        "name": "Tech Fest",
+        "description": "Annual technology showcase featuring student projects, startup pitches, and Silicon Valley tech leaders."
+      },
+      {
+        "name": "Entrepreneurship Bootcamp",
+        "description": "Intensive program teaching engineering students how to commercialize their innovations and launch startups."
+      }
+    ],
+    "researchHistory": ["Clean Energy", "Autonomous Vehicles"],
+    "sports": [
+      {
+        "name": "Tennis",
+        "details": "NCAA Division I tennis program with multiple national championships and world-class training facilities."
+      },
+      {
+        "name": "Basketball",
+        "details": "Elite basketball program competing in the Pac-12 conference with modern arena and training complex."
+      }
+    ],
+    "rating": 4.9,
+    "researchCount": 470,
+    "gallery": [
+      "https://source.unsplash.com/featured/?stanford-campus",
+      "https://source.unsplash.com/featured/?stanford-lab"
+    ],
+    "papers": [
+      {
+        "title": "Electric Vehicle Infrastructure",
+        "link": "https://example.com/papers/ev-infra.pdf"
+      }
+    ],
+    "admissionProcess": "Common App > SAT/ACT > Interview",
+    "admissionProcessDetails": {
+      "steps": [
+        {
+          "step": 1,
+          "description": "Submit Common Application with Stanford-specific questions"
+        },
+        {
+          "step": 2,
+          "description": "Submit SAT (minimum 1500) or ACT (minimum 34) scores"
+        },
+        {
+          "step": 3,
+          "description": "Complete two teacher evaluations (preferably from math/science teachers)"
+        },
+        {
+          "step": 4,
+          "description": "Submit school report and official transcript"
+        },
+        {
+          "step": 5,
+          "description": "Optional alumni interview (offered based on availability)"
+        }
+      ],
+      "requirements": {
+        "GPA": "No minimum, but most admitted students are in top 5% of class",
+        "Prerequisites": "Strong background in math and science, including calculus and physics",
+        "Deadlines": "Restrictive Early Action November 1, Regular Decision January 5"
+      }
+    },
+    "reviews": [],
+    "summary": "A hub of technological innovation, known for clean energy and autonomous vehicle research. Events like Tech Fest attract global attention. Admissions follow the Common App, SAT/ACT, and interview."
+  },
+  {
+    "id": 5,
+    "name": "Johns Hopkins School of Medicine",
+    "image": "https://i.ytimg.com/vi/KnNaPzR-AEE/maxresdefault.jpg",
+    "admissionDates": "August 15 – December 1",
+    "events": [
+      {
+        "name": "Neurosurgery Symposium",
+        "description": "Annual conference featuring leading neurosurgeons presenting innovative techniques and case studies."
+      },
+      {
+        "name": "Global Health Hackathon",
+        "description": "48-hour competition where interdisciplinary teams develop solutions to pressing global health challenges."
+      }
+    ],
+    "researchHistory": ["Genetic Disorders", "Surgical Technology"],
+    "sports": [
+      {
+        "name": "Lacrosse",
+        "details": "NCAA Division I lacrosse program with national championships and historic rivalry with Maryland."
+      },
+      {
+        "name": "Swimming",
+        "details": "Competitive swimming program with Olympic-level training facilities and coaching staff."
+      }
+    ],
+    "rating": 4.8,
+    "researchCount": 350,
+    "gallery": [
+      "https://source.unsplash.com/featured/?johns-hopkins-campus",
+      "https://source.unsplash.com/featured/?johns-hopkins-research"
+    ],
+    "papers": [
+      {
+        "title": "Gene Therapy Techniques",
+        "link": "https://example.com/papers/gene-therapy.pdf"
+      }
+    ],
+    "admissionProcess": "MCAT > AMCAS > Interview",
+    "admissionProcessDetails": {
+      "steps": [
+        {
+          "step": 1,
+          "description": "Submit AMCAS primary application (June-August)"
+        },
+        {
+          "step": 2,
+          "description": "Submit MCAT scores (minimum 520 recommended)"
+        },
+        {
+          "step": 3,
+          "description": "Complete Johns Hopkins secondary application with essay questions"
+        },
+        {
+          "step": 4,
+          "description": "Submit letters of recommendation (minimum 3, including 2 from science faculty)"
+        },
+        {
+          "step": 5,
+          "description": "Participate in multiple mini-interviews (MMI format)"
+        }
+      ],
+      "requirements": {
+        "GPA": "Minimum 3.9 science GPA recommended",
+        "Prerequisites": "1 year each of Biology, Physics, General Chemistry, Organic Chemistry, and English",
+        "Deadlines": "AMCAS due August 1, secondary due December 1"
+      }
+    },
+    "reviews": [],
+    "summary": "Renowned for medical research, particularly in genetic disorders and surgical innovations. Organizes events like Global Health Hackathon. Admission process includes MCAT, AMCAS application, and interview."
+  },
+  {
+    "id": 6,
+    "name": "California Institute of Technology (Caltech)",
+    "image": "https://admissionsight.com/wp-content/uploads/2023/04/shutterstock_159061820.jpg",
+    "admissionDates": "October 1 – January 3",
+    "events": [
+      {
+        "name": "Quantum Mechanics Week",
+        "description": "Series of lectures, workshops, and demonstrations exploring cutting-edge quantum physics research."
+      },
+      {
+        "name": "NanoTech Expo",
+        "description": "Showcase of nanotechnology innovations from Caltech labs and industry partners."
+      }
+    ],
+    "researchHistory": ["Space Engineering", "Nano Materials"],
+    "sports": [
+      {
+        "name": "Track & Field",
+        "details": "NCAA Division III program with comprehensive training facilities for all track and field events."
+      },
+      {
+        "name": "Fencing",
+        "details": "Competitive fencing program with opportunities to compete in regional and national tournaments."
+      }
+    ],
+    "rating": 4.7,
+    "researchCount": 290,
+    "gallery": [
+      "https://source.unsplash.com/featured/?caltech-campus",
+      "https://source.unsplash.com/featured/?caltech-lab"
+    ],
+    "papers": [
+      {
+        "title": "Nanotechnology and its Future",
+        "link": "https://example.com/papers/nano-future.pdf"
+      }
+    ],
+    "admissionProcess": "Application > SAT/ACT > Interview",
+    "admissionProcessDetails": {
+      "steps": [
+        {
+          "step": 1,
+          "description": "Submit Caltech-specific application (no Common App accepted)"
+        },
+        {
+          "step": 2,
+          "description": "Submit SAT (minimum 1550) or ACT (minimum 35) scores"
+        },
+        {
+          "step": 3,
+          "description": "Complete math and science teacher evaluations"
+        },
+        {
+          "step": 4,
+          "description": "Submit research abstract (if applicable)"
+        },
+        {
+          "step": 5,
+          "description": "Optional alumni interview (offered based on availability)"
+        }
+      ],
+      "requirements": {
+        "GPA": "No minimum, but most admitted students have 4.0 or equivalent",
+        "Prerequisites": "Strong background in math and science, including calculus and physics",
+        "Deadlines": "Early Action November 1, Regular Decision January 3"
+      }
+    },
+    "reviews": [],
+    "summary": "Famous for cutting-edge research in nanotechnology and space engineering. Hosts events like NanoTech Expo. Admission involves an application, standardized test scores, and an interview."
+  },
+  {
+    "id": 7,
+    "name": "University of Cambridge – School of Clinical Medicine",
+    "image": "https://cambridge-biomedical.com/wp-content/uploads/2024/07/Imageslider-mb-campusoverview-3.jpg",
+    "admissionDates": "September 20 – December 31",
+    "events": [
+      {
+        "name": "Genetic Disorders Conference",
+        "description": "Annual conference bringing together researchers and clinicians working on genetic diseases and therapies."
+      },
+      {
+        "name": "Neurobiology Meetup",
+        "description": "Monthly gathering of neuroscience researchers to share findings and collaborate on projects."
+      }
+    ],
+    "researchHistory": ["Brain Imaging", "Cardiology"],
+    "sports": [
+      {
+        "name": "Cricket",
+        "details": "Traditional cricket program with historic grounds and annual matches against Oxford."
+      },
+      {
+        "name": "Rowing",
+        "details": "World-renowned rowing program with access to the River Cam and annual Boat Race against Oxford."
+      }
+    ],
+    "rating": 4.8,
+    "researchCount": 360,
+    "gallery": [
+      "https://source.unsplash.com/featured/?cambridge-campus",
+      "https://source.unsplash.com/featured/?cambridge-research"
+    ],
+    "papers": [
+      {
+        "title": "Understanding Brain Functions",
+        "link": "https://example.com/papers/brain-functions.pdf"
+      }
+    ],
+    "admissionProcess": "UCAS > BMAT > Interview",
+    "admissionProcessDetails": {
+      "steps": [
+        {
+          "step": 1,
+          "description": "Submit UCAS application by October 15 deadline"
+        },
+        {
+          "step": 2,
+          "description": "Register for and take the BMAT (BioMedical Admissions Test) in November"
+        },
+        {
+          "step": 3,
+          "description": "Submit academic transcripts and personal statement"
+        },
+        {
+          "step": 4,
+          "description": "Participate in Cambridge's rigorous interview process (typically in December)"
+        },
+        {
+          "step": 5,
+          "description": "Receive conditional offer based on A-level or IB predicted grades"
+        }
+      ],
+      "requirements": {
+        "Grades": "A*A*A at A-level (including Chemistry and one other science) or equivalent",
+        "BMAT": "Competitive score typically in top 20% of test-takers",
+        "Deadlines": "UCAS October 15, BMAT November"
+      }
+    },
+    "reviews": [],
+    "summary": "A top-tier UK university known for research in brain imaging and cardiology. Events include the Genetic Disorders Conference. Admissions go through UCAS, BMAT, and an interview."
+  },
+  {
+    "id": 8,
+    "name": "ETH Zurich – Department of Engineering",
+    "image": "https://mas-mtec.ethz.ch/aboutus/eth-zurich/_jcr_content/par/fullwidthimage/image.imageformat.1286.1337144021.jpg",
+    "admissionDates": "April 1 – July 31",
+    "events": [
+      {
+        "name": "Robotics & AI Day",
+        "description": "Annual showcase of robotics and AI innovations from ETH labs and industry partners."
+      },
+      {
+        "name": "Sustainable Engineering Forum",
+        "description": "Conference focusing on sustainable engineering solutions to global challenges."
+      }
+    ],
+    "researchHistory": ["Robotics", "Renewable Energy"],
+    "sports": [
+      {
+        "name": "Skiing",
+        "details": "Competitive skiing program with access to Swiss Alps training facilities and competitions."
+      },
+      {
+        "name": "Football",
+        "details": "Intercollegiate football (soccer) program competing in Swiss university leagues."
+      }
+    ],
+    "rating": 4.7,
+    "researchCount": 410,
+    "gallery": [
+      "https://source.unsplash.com/featured/?eth-campus",
+      "https://source.unsplash.com/featured/?eth-lab"
+    ],
+    "papers": [
+      {
+        "title": "AI Integration in Manufacturing",
+        "link": "https://example.com/papers/ai-manufacturing.pdf"
+      }
+    ],
+    "admissionProcess": "Online Application > Entrance Test",
+    "admissionProcessDetails": {
+      "steps": [
+        {
+          "step": 1,
+          "description": "Submit online application through ETH portal"
+        },
+        {
+          "step": 2,
+          "description": "Provide proof of secondary school diploma (Matura, Abitur, IB, or equivalent)"
+        },
+        {
+          "step": 3,
+          "description": "Submit language proficiency proof (German C1 level required)"
+        },
+        {
+          "step": 4,
+          "description": "Take entrance examination in mathematics and physics (if required)"
+        },
+        {
+          "step": 5,
+          "description": "Complete interview (for some programs)"
+        }
+      ],
+      "requirements": {
+        "Grades": "Strong performance in math and science subjects",
+        "Prerequisites": "Advanced mathematics and physics background",
+        "Deadlines": "April 1 for autumn semester, July 31 for spring semester"
+      }
+    },
+    "reviews": [],
+    "summary": "A leading European engineering school focusing on robotics and renewable energy. Known for events like Robotics & AI Day. Admissions involve an online application and an entrance test."
+  },
+  {
+    "id": 9,
+    "name": "Imperial College London – Faculty of Medicine",
+    "image": "https://www.medicmind.co.uk/wp-content/uploads/2020/05/imperial-1-scaled.jpeg",
+    "admissionDates": "August 1 – October 31",
+    "events": [
+      {
+        "name": "MedTech Hackathon",
+        "description": "48-hour competition where teams develop innovative medical technology solutions to real healthcare problems."
+      },
+      {
+        "name": "Global Health Challenge",
+        "description": "Annual case competition where students propose solutions to pressing global health issues."
+      }
+    ],
+    "researchHistory": ["Tropical Diseases", "Cardiovascular Research"],
+    "sports": [
+      {
+        "name": "Rugby",
+        "details": "Competitive rugby program with modern training facilities and regular matches against other UK universities."
+      },
+      {
+        "name": "Basketball",
+        "details": "Intercollegiate basketball program competing in British university leagues."
+      }
+    ],
+    "rating": 4.6,
+    "researchCount": 390,
+    "gallery": [
+      "https://source.unsplash.com/featured/?imperial-campus",
+      "https://source.unsplash.com/featured/?imperial-lab"
+    ],
+    "papers": [
+      {
+        "title": "Heart Disease Prevention Techniques",
+        "link": "https://example.com/papers/heart-disease.pdf"
+      }
+    ],
+    "admissionProcess": "UCAS > Interview > Aptitude Test",
+    "admissionProcessDetails": {
+      "steps": [
+        {
+          "step": 1,
+          "description": "Submit UCAS application by October 15 deadline"
+        },
+        {
+          "step": 2,
+          "description": "Register for and take the BMAT (BioMedical Admissions Test) in November"
+        },
+        {
+          "step": 3,
+          "description": "Submit academic transcripts and personal statement"
+        },
+        {
+          "step": 4,
+          "description": "Participate in multiple mini-interviews (MMI format)"
+        },
+        {
+          "step": 5,
+          "description": "Receive conditional offer based on A-level or IB predicted grades"
+        }
+      ],
+      "requirements": {
+        "Grades": "A*AA at A-level (including Chemistry and Biology) or equivalent",
+        "BMAT": "Competitive score typically in top 20% of test-takers",
+        "Deadlines": "UCAS October 15, BMAT November"
+      }
+    },
+    "reviews": [],
+    "summary": "Specializes in medical technology and cardiovascular research. Events include the MedTech Hackathon. Admissions go through UCAS, an interview, and an aptitude test."
+  },
+  {
+    "id": 10,
+    "name": "University of Tokyo – Faculty of Engineering",
+    "image": "https://www.t.u-tokyo.ac.jp/hs-fs/hubfs/ciw/IMG_9577.2.jpg?width=2592&height=1728&name=IMG_9577.2.jpg",
+    "admissionDates": "March 1 – June 15",
+    "events": [
+      {
+        "name": "Smart City Expo",
+        "description": "Annual exhibition showcasing smart city technologies and urban innovation projects."
+      },
+      {
+        "name": "TechX Asia",
+        "description": "Premier technology conference featuring speakers from across Asia and demonstrations of cutting-edge tech."
+      }
+    ],
+    "researchHistory": ["Earthquake-resistant Design", "Smart Grids"],
+    "sports": [
+      {
+        "name": "Judo",
+        "details": "Elite judo program with Olympic-level training facilities and coaching staff."
+      },
+      {
+        "name": "Archery",
+        "details": "Competitive archery program with traditional Japanese kyudo training available."
+      }
+    ],
+    "rating": 4.7,
+    "researchCount": 330,
+    "gallery": [
+      "https://source.unsplash.com/featured/?tokyo-campus",
+      "https://source.unsplash.com/featured/?tokyo-lab"
+    ],
+    "papers": [
+      {
+        "title": "Smart Grid Technologies",
+        "link": "https://example.com/papers/smart-grid.pdf"
+      }
+    ],
+    "admissionProcess": "Application > Written Exam > Interview",
+    "admissionProcessDetails": {
+      "steps": [
+        {
+          "step": 1,
+          "description": "Submit online application through University of Tokyo portal"
+        },
+        {
+          "step": 2,
+          "description": "Take the University of Tokyo entrance examination (mathematics, physics, and English)"
+        },
+        {
+          "step": 3,
+          "description": "Submit academic records from secondary school"
+        },
+        {
+          "step": 4,
+          "description": "Participate in faculty-specific interview (conducted in Japanese or English)"
+        },
+        {
+          "step": 5,
+          "description": "Complete additional subject tests for some programs"
+        }
+      ],
+      "requirements": {
+        "Grades": "Top performance in math and science subjects",
+        "Language": "Japanese N1 level or equivalent for Japanese-taught programs, IELTS 6.5 for English-taught",
+        "Deadlines": "March 1 for first round, June 15 for second round"
+      }
+    },
+    "reviews": [],
+    "summary": "Top Asian university known for earthquake-resistant structures and smart grid technologies. Organizes events like Smart City Expo. Admission involves an application, a written exam, and an interview."
+  }
+]
+
+[
+    {
+  "_id": {
+    "$oid": "682f0ac83b503043b40b2ce1"
+  },
+  "title": "FairVision: Equitable Deep Learning for Eye Disease Screening via Fair Identity Scaling",
+  "authors": [
+    "Yan Luo",
+    "Muhammad Osama Khan",
+    "Yu Tian",
+    "Min Shi",
+    "Zehao Dou",
+    "Tobias Elze",
+    "Yi Fang",
+    "Mengyu Wang"
+  ],
+  "university": "Harvard Medical School",
+  "published": "03 Octobor, 2023",
+  "summary": "This paper addresses bias in 3D medical imaging models and proposes a novel method called Fair Identity Scaling (FIS) that significantly improves both fairness and performance in AI-driven eye disease screening.",
+  "link": "https://arxiv.org/pdf/2310.02492"
+},
+{
+  "_id": {
+    "$oid": "682f0ac83b503043b40b2ce2"
+  },
+  "title": "How AI and Human Behaviors Shape Psychosocial Effects of Chatbot Use: A Longitudinal Controlled Study",
+  "authors": [
+    "Cathy Mengying Fang",
+    "Auren R. Liu",
+    "Valdemar Danry",
+    "Eunhae Lee",
+    "Samantha W.T Chan",
+    "Pat Pataranutaporn",
+    "Pattie Maes",
+    "Jason Phang",
+    "Michael Lampe",
+    "Lama Ahmad",
+    "Sandhini Agarwal"
+  ],
+  "university": "Massachusetts Institute of Technology (MIT)",
+  "published": "26 January, 2025",
+  "summary": "This research explores the long-term psychosocial effects of using AI chatbots, analyzing how both AI behavior and user characteristics influence well-being and engagement.",
+  "link": "https://www.media.mit.edu/research/?filter=publications"
+},
+{
+  "_id": {
+    "$oid": "682f0ac83b503043b40b2ce3"
+  },
+  "title": "Compliant Self Service Access to Secondary Use Clinical Data at Stanford Medicine",
+  "authors": [
+    "SC Weber",
+    "J Pallas",
+    "G Olson",
+    "D Love",
+    "S Malunjkar",
+    "S Boosi",
+    "E Loh",
+    "S Datta",
+    "TA Ferris"
+  ],
+  "university": "Stanford University – School of Engineering",
+  "published": "05 December, 2024",
+  "summary": "This paper describes a compliant system for researchers to access clinical data through the Stanford Research Repository (STARR), enabling more efficient and ethical data-driven studies.",
+  "link": "https://arxiv.org/pdf/2412.04248"
+},
+{
+  "_id": {
+    "$oid": "682f0ac83b503043b40b2ce6"
+  },
+  "title": "Digital Alchemy for Molecular Design: Learning Retrosynthesis Strategies via Deep Reinforcement Learning",
+  "authors": [
+    "Andrew White",
+    "Alán Aspuru-Guzik",
+    "Yoshua Bengio"
+  ],
+  "university": "California Institute of Technology (Caltech)",
+  "published": "22 August, 2022",
+  "summary": "This Caltech-led study explores AI-based molecular synthesis design using deep reinforcement learning to optimize retrosynthesis pathways.",
+  "link": "https://arxiv.org/pdf/2208.10535"
+},
+{
+  "_id": {
+    "$oid": "682f20963b503043b40b2cee"
+  },
+  "title": "Single-cell multiomic profiling of human lungs reveals cell-type-specific regulatory programs in aging and COVID-19",
+  "authors": [
+    "Delorey, T. M.",
+    "Ziegler, C. G. K.",
+    "Heinz, S.",
+    "et al."
+  ],
+  "university": "University of Oxford – Medical Sciences",
+  "published": "12 March, 2021",
+  "summary": "This study provides a comprehensive single-cell multiomic analysis of human lung tissue, uncovering cell-type-specific regulatory programs associated with aging and COVID-19.",
+  "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7688309/"
+},
+{
+  "_id": {
+    "$oid": "682f20963b503043b40b2cef"
+  },
+  "title": "A single-cell and spatial atlas of autopsy tissues reveals pathology and cellular targets of SARS-CoV-2",
+  "authors": [
+    "Delorey, T. M.",
+    "Ziegler, C. G. K.",
+    "Heinz, S.",
+    "et al."
+  ],
+  "university": "Johns Hopkins School of Medicine",
+  "published": "25 February, 2021",
+  "summary": "This paper presents a single-cell and spatial atlas of autopsy tissues from COVID-19 patients, identifying cellular targets of SARS-CoV-2 across multiple organs.",
+  "link": "https://pubmed.ncbi.nlm.nih.gov/33655247/"
+}
+,{
+  "_id": {
+    "$oid": "682f20963b503043b40b2cf0"
+  },
+  "title": "Genomic analysis of early SARS-CoV-2 epidemic in the UK",
+  "authors": [
+    "Lythgoe, K. A.",
+    "Hall, M.",
+    "Ferretti, L.",
+    "et al."
+  ],
+  "university": "University of Cambridge – School of Clinical Medicine",
+  "published": "28 Octobor, 2020",
+  "summary": "This research analyzes the genomic epidemiology of SARS-CoV-2 during the early stages of the UK epidemic, providing insights into transmission dynamics.",
+  "link": "https://www.news-medical.net/news/20201028/Genomic-analysis-of-early-SARS-CoV-2-epidemic-in-the-UK.aspx"
+},
+{
+  "_id": {
+    "$oid": "682f20963b503043b40b2cf1"
+  },
+  "title": "Spring toy-inspired soft robots with electrohydraulic actuators",
+  "authors": [
+    "Zhou, Y.",
+    "Chen, X.",
+    "Li, Y.",
+    "et al."
+  ],
+  "university": "ETH Zurich – Department of Engineering",
+  "published": "15 January, 2024",
+  "summary": "This paper introduces a novel electrohydraulic-based soft robot inspired by spring toys, demonstrating unique locomotion capabilities.",
+  "link": "https://www.nature.com/articles/s41598-024-71018-w"
+},
+{
+  "_id": {
+    "$oid": "682f20963b503043b40b2cf2"
+  },
+  "title": "Targeting the tumor microenvironment in pancreatic ductal adenocarcinoma using CAR T cells",
+  "authors": [
+    "Akce, M.",
+    "Zaidi, M. Y.",
+    "Waller, E. K.",
+    "et al."
+  ],
+  "university": "Imperial College London – Faculty of Medicine",
+  "published": "04 June, 2019",
+  "summary": "This study explores the use of CAR T cells to target the tumor microenvironment in pancreatic ductal adenocarcinoma, highlighting therapeutic potential.",
+  "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6548630/"
+},
+{
+  "_id": {
+    "$oid": "682f20963b503043b40b2cf3"
+  },
+  "title": "Molecular control of seasonal flowering in rice, Arabidopsis and temperate cereals",
+  "authors": [
+    "Izawa, T.",
+    "Oikawa, T.",
+    "Sugiyama, N.",
+    "et al."
+  ],
+  "university": "University of Tokyo – Faculty of Engineering",
+  "published": "15 Octobor, 2013",
+  "summary": "This review discusses the molecular mechanisms controlling seasonal flowering in rice and other plants, emphasizing photoperiodic responses.",
+  "link": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4204779/"
+}
+]

@@ -8,8 +8,6 @@ const Navbar = () => {
   const location = useLocation();
   const path = location.pathname;
 
-  console.log(path);
-
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
