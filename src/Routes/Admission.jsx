@@ -40,7 +40,9 @@ const Admission = () => {
   return (
     <div className="my-36">
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-5xl font-bold mb-6 text-center slab text-[#890C25]">Admission Form</h1>
+        <h1 className="text-5xl font-bold mb-6 text-center slab text-[#890C25]">
+          Admission Form
+        </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
           {clgData.map((college, idx) => (
@@ -48,7 +50,9 @@ const Admission = () => {
               key={idx}
               onClick={() => handleSelect(college?.name)}
               className={`cursor-pointer p-4 border border-[#890C25] rounded-lg hover:bg-[#FFF4F6] hover:text-black transition duration-300 text-left quick ${
-                selectedCollege === college?.name ? "bg-[#890C25] text-white" : "bg-transparent"
+                selectedCollege === college?.name
+                  ? "bg-[#890C25] text-white"
+                  : "bg-transparent"
               }`}
             >
               {college?.name}
@@ -67,7 +71,9 @@ const Admission = () => {
               className="grid grid-cols-1 md:grid-cols-2 gap-4 quick"
             >
               <input
-                {...register("candidateName", { required: "Candidate Name is required" })}
+                {...register("candidateName", {
+                  required: "Candidate Name is required",
+                })}
                 type="text"
                 placeholder="Candidate Name"
                 className="border border-[#890C25] p-2 rounded"

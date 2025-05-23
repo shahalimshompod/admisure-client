@@ -4,8 +4,6 @@ const ResearchPaperCard = ({ data }) => {
   // destructuring datas
   const { _id, title, authors, university, published, summary, link } = data;
 
-  console.log(authors);
-
   return (
     <div className="card bg-[#890C25] text-primary-content w-full">
       <div className="card-body">

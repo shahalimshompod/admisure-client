@@ -31,10 +31,7 @@ const DetailsPage = () => {
     sports,
     rating,
     researchCount,
-    gallery,
-    papers,
     admissionProcess,
-    reviews,
     summary,
     admissionProcessDetails,
   } = detailsData;
@@ -47,8 +44,6 @@ const DetailsPage = () => {
     summary: researchSummary,
     link,
   } = researchWork;
-
-  console.log(researchSummary);
 
   // fetching data from server
   const FetchData = async () => {

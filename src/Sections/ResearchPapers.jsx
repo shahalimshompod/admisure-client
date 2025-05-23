@@ -17,7 +17,7 @@ const ResearchPapers = () => {
     fetchData();
   }, []);
 
-  console.log(researchData);
+  
   return (
     <div className="bg-[#FFF4F6] my-48 flex flex-col items-center gap-12 p-20 rounded-3xl">
       <div className="flex flex-col items-center gap-5">

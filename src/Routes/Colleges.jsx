@@ -20,8 +20,6 @@ const Colleges = () => {
     fetchData();
   }, []);
 
-  console.log(cardData);
-
     return (
         <div className='my-36 container mx-auto'>
             <div className='flex items-center mb-20 gap-6'>

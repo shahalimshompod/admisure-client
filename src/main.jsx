@@ -9,6 +9,12 @@ import HomeLayout from "./layouts/HomeLayout.jsx";
 import Colleges from "./Routes/Colleges.jsx";
 import DetailsPage from "./Routes/detailsPage.jsx";
 import Admission from "./Routes/Admission.jsx";
+import LoginForm from "./Routes/LoginForm.jsx";
+import RegisterForm from "./Routes/RegisterForm.jsx";
+import AuthContextProvider from "./Auth/AuthContextProvider.jsx";
+import MyProfile from "./Routes/MyProfile.jsx";
+import ForgotPassword from "./Routes/ForgotPassword.jsx";
+import AboutUs from "./Routes/AboutUs.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,12 +37,46 @@ const router = createBrowserRouter([
         path: "/admission",
         element: <Admission />,
       },
+      {
+        path: "/my-profile",
+        element: <MyProfile />,
+      },
+      {
+        path: "/about-us",
+        element: <AboutUs />,
+      },
     ],
+  },
+  {
+    path: "/login",
+    element: <LoginForm />,
+    loader: () => {
+      document.title = "Login | Admisure";
+      return;
+    },
+  },
+  {
+    path: "/register",
+    element: <RegisterForm />,
+    loader: () => {
+      document.title = "Register | Admisure";
+      return;
+    },
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPassword />,
+    loader: () => {
+      document.title = "Forgot Password | Admisure";
+      return;
+    },
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthContextProvider>
+      <RouterProvider router={router} />
+    </AuthContextProvider>
   </StrictMode>
 );

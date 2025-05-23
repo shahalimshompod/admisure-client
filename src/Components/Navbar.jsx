@@ -1,12 +1,29 @@
-import React, { useState, useEffect } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import React, { useState, useEffect, useContext } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import sureIcon from "../assets/icons/sure.png";
+import { FaUserCircle } from "react-icons/fa";
+import { AuthContext } from "../Auth/AuthContextProvider";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   // scroll functionalities
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const path = location.pathname;
+
+  // user information
+  const { user, userLogout } = useContext(AuthContext);
+
+  console.log(user);
+  // user info
+  const image = user?.photoURL;
+
+  // handle logout user when click logout btn
+  const handleLogout = () => {
+    userLogout();
+    // toast
+    toast.success("Successfully toasted!");
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -71,28 +88,46 @@ const Navbar = () => {
                   Colleges
                 </NavLink>
               </li>
+              {user ? (
+                <>
+                  <li>
+                    <NavLink
+                      to="/admission"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "bg-[#FFF4F6] text-[#890C25] rounded-md px-3 py-1"
+                          : "hover:bg-white/20 px-3 py-1 rounded-md"
+                      }
+                    >
+                      Admission
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      to="/my-college"
+                      className={({ isActive }) =>
+                        isActive
+                          ? "bg-[#FFF4F6] text-[#890C25] rounded-md px-3 py-1"
+                          : "hover:bg-white/20 px-3 py-1 rounded-md"
+                      }
+                    >
+                      My College
+                    </NavLink>
+                  </li>
+                </>
+              ) : (
+                ""
+              )}
               <li>
                 <NavLink
-                  to="/admission"
+                  to="/about-us"
                   className={({ isActive }) =>
                     isActive
                       ? "bg-[#FFF4F6] text-[#890C25] rounded-md px-3 py-1"
                       : "hover:bg-white/20 px-3 py-1 rounded-md"
                   }
                 >
-                  Admission
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/my-college"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "bg-[#FFF4F6] text-[#890C25] rounded-md px-3 py-1"
-                      : "hover:bg-white/20 px-3 py-1 rounded-md"
-                  }
-                >
-                  My College
+                  About Us
                 </NavLink>
               </li>
             </ul>
@@ -100,37 +135,49 @@ const Navbar = () => {
 
           {/* profile dropdown */}
           <div className="navbar-end">
-            <div className="dropdown dropdown-end">
-              <div
-                tabIndex={0}
-                role="button"
-                className="btn btn-ghost btn-circle avatar"
-              >
-                <div className="w-10 rounded-full">
-                  <img
-                    alt="Profile"
-                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                  />
+            {user ? (
+              <div className="dropdown dropdown-end">
+                <div
+                  tabIndex={0}
+                  role="button"
+                  className="btn bg-transparent btn-circle avatar"
+                >
+                  <div className="w-10 rounded-full">
+                    {image ? (
+                      <img alt="Profile" src={image} />
+                    ) : (
+                      <FaUserCircle fill="white" size={38} />
+                    )}
+                  </div>
                 </div>
+                <ul
+                  tabIndex={0}
+                  className="menu quick menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-ful p-2 shadow"
+                >
+                  <div className="p-2">
+                    <h1 className="font-black text-xl">{user?.displayName}</h1>
+                    <h4 className="font-semibold text-sm">{user?.email}</h4>
+                  </div>
+                  <div className="divider"></div>
+                  <li>
+                    <Link to={"/my-profile"}>
+                      <a className="font-normal text-lg">Profile</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <a className="font-normal text-lg" onClick={handleLogout}>
+                      Logout
+                    </a>
+                  </li>
+                </ul>
               </div>
-              <ul
-                tabIndex={0}
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-              >
-                <li>
-                  <a className="justify-between">
-                    Profile
-                    <span className="badge">New</span>
-                  </a>
-                </li>
-                <li>
-                  <a>Settings</a>
-                </li>
-                <li>
-                  <a>Logout</a>
-                </li>
-              </ul>
-            </div>
+            ) : (
+              <Link to={"/login"}>
+                <button className="btn quick border-none hover:bg-[#FFF4F6]">
+                  Login
+                </button>
+              </Link>
+            )}
           </div>
         </div>
       </div>
