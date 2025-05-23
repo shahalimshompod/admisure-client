@@ -8,6 +8,7 @@ import App from "./App.jsx";
 import HomeLayout from "./layouts/HomeLayout.jsx";
 import Colleges from "./Routes/Colleges.jsx";
 import DetailsPage from "./Routes/detailsPage.jsx";
+import Admission from "./Routes/Admission.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/college-details/:id",
         element: <DetailsPage />,
+      },
+      {
+        path: "/admission",
+        element: <Admission />,
       },
     ],
   },
