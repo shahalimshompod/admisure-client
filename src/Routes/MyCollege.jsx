@@ -6,6 +6,7 @@ import { AuthContext } from "../Auth/AuthContextProvider";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { useForm, Controller } from "react-hook-form";
 import toast from "react-hot-toast";
+import star from "../assets/icons/star.png";
 
 const MyCollege = () => {
   const { user } = useContext(AuthContext);
@@ -177,7 +178,7 @@ const MyCollege = () => {
                         alt={college.name}
                         className="w-full h-48 object-cover rounded"
                       />
-                      <h2 className="text-2xl font-semibold text-[#890C25] my-2">
+                      <h2 className="text-2xl font-semibold text-[#890C25] slab my-2">
                         {college.name}
                       </h2>
                       <p className="quick flex flex-wrap gap-1">
@@ -275,14 +276,18 @@ const MyCollege = () => {
                             className="w-16 h-16 rounded-full object-cover mr-4"
                           />
                           <div>
-                            <h3 className="font-semibold text-lg">
+                            <h3 className="font-semibold text-lg slab">
                               {admission?.review.reviewerName}
                             </h3>
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-gray-500 quick">
                               {formatDate(admission?.review.createdAt).date} |{" "}
                               {formatDate(admission?.review.createdAt).time}
                             </p>
-                            <p className="text-gray-700 text-sm mt-1">
+                            <p className="text-gray-700 text-sm mt-1 quick flex items-center gap-3">
+                              <img className="w-4" src={star} alt="star" />
+                              <span>{admission?.review.rating}</span>
+                            </p>
+                            <p className="text-gray-700 text-sm mt-1 quick">
                               “{admission?.review.reviewText}”
                             </p>
                           </div>

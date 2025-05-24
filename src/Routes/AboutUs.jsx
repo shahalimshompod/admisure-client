@@ -1,8 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaGraduationCap, FaBook, FaUsers, FaChartLine } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../Auth/AuthContextProvider";
 
 const AboutUs = () => {
+  const { user } = useContext(AuthContext);
+
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -34,10 +39,7 @@ const AboutUs = () => {
         variants={containerVariants}
       >
         {/* Hero Section */}
-        <motion.section
-          className="text-center py-16"
-          variants={itemVariants}
-        >
+        <motion.section className="text-center py-16" variants={itemVariants}>
           <motion.h1
             className="slab text-4xl md:text-5xl lg:text-6xl font-bold text-[#890C25] mb-6"
             initial={{ scale: 0.9 }}
@@ -71,8 +73,8 @@ const AboutUs = () => {
               className="quick text-gray-600 mb-6 text-lg"
               whileHover={{ x: 5 }}
             >
-              At College Connect, we're revolutionizing how students discover and
-              interact with colleges. Our platform simplifies the admission
+              At College Connect, we're revolutionizing how students discover
+              and interact with colleges. Our platform simplifies the admission
               process, making it transparent, efficient, and student-friendly.
             </motion.p>
             <motion.p
@@ -178,10 +180,7 @@ const AboutUs = () => {
         </motion.section>
 
         {/* Contact CTA */}
-        <motion.section
-          className="text-center py-16"
-          variants={itemVariants}
-        >
+        <motion.section className="text-center py-16" variants={itemVariants}>
           <motion.h2
             className="slab text-3xl md:text-4xl font-bold text-[#890C25] mb-6"
             whileInView={{ y: 0, opacity: 1 }}
@@ -197,16 +196,18 @@ const AboutUs = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            Join thousands of students who found their perfect college through our
-            platform.
+            Join thousands of students who found their perfect college through
+            our platform.
           </motion.p>
-          <motion.button
-            className="cursor-pointer border-none quick bg-[#890C25] hover:bg-[#C51F3A] text-white font-medium py-3 px-8 rounded-lg text-lg transition duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Started Today
-          </motion.button>
+          <Link to={user ? "/admission" : "/login"}>
+            <motion.button
+              className="cursor-pointer border-none quick bg-[#890C25] hover:bg-[#C51F3A] text-white font-medium py-3 px-8 rounded-lg text-lg transition duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Get Started Today
+            </motion.button>
+          </Link>
         </motion.section>
       </motion.div>
     </div>

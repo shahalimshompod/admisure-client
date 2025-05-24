@@ -18,11 +18,13 @@ import AboutUs from "./Routes/AboutUs.jsx";
 import SecureRoute from "./Routes/SecureRoute.jsx";
 import PreventLoginRegisterRoute from "./Routes/PreventLoginRegisterRoute.jsx";
 import MyCollege from "./Routes/MyCollege.jsx";
+import ErrorPage from "./Routes/ErrorPage.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -62,7 +64,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/my-college",
-        element: <SecureRoute><MyCollege /></SecureRoute>,
+        element: (
+          <SecureRoute>
+            <MyCollege />
+          </SecureRoute>
+        ),
       },
     ],
   },
