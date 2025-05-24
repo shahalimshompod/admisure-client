@@ -72,8 +72,6 @@ const Admission = () => {
         candidateImage,
       };
 
-      console.log(finalData);
-
       if (candidateImage) {
         const res = await axiosPublic.post(
           "/my-college-application",

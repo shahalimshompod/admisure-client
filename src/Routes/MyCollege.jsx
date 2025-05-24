@@ -110,13 +110,12 @@ const MyCollege = () => {
 
       // post review data to server
       const res = await axiosPublic.post("/review-data-post", reviewData);
-      console.log(res?.data);
+     
       if (res?.data.insertedId) {
         const res = await axiosPublic.put(
           `/put-individual-review-data/${currentCollegeId}`,
           reviewData
         );
-        console.log(res?.data);
         if (res?.data.modifiedCount) {
           setShowModal(false);
           reset();

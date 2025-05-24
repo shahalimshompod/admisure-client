@@ -31,7 +31,6 @@ const LoginForm = () => {
 
   // login with email and password
   const onSubmit = (data) => {
-    console.log(data);
     setLoginLoader(true);
     const email = data.email;
     const password = data.password;
@@ -67,7 +66,6 @@ const LoginForm = () => {
 
           // posting user in database
           const res = await axiosPublic.post("/users", userInfo);
-          console.log(res?.data);
 
           if (res?.insertedId) {
             setGithubLoginLoader(false);
@@ -102,7 +100,6 @@ const LoginForm = () => {
 
           // posting user in database
           const res = await axiosPublic.post("/users", userInfo);
-          console.log(res?.data);
 
           if (res?.insertedId) {
             setGoogleLoginLoader(false);

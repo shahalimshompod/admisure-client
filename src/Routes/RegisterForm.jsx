@@ -97,7 +97,6 @@ const RegisterForm = () => {
 
           // posting user in database
           const res = await axiosPublic.post("/users", userInfo);
-          console.log(res?.data);
 
           if (res?.insertedId) {
             setGoogleLoginLoader(false);
@@ -132,7 +131,6 @@ const RegisterForm = () => {
 
           // posting user in database
           const res = await axiosPublic.post("/users", userInfo);
-          console.log(res?.data);
 
           if (res?.insertedId) {
             setGithubLoginLoader(false);

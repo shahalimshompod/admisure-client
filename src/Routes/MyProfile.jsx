@@ -25,7 +25,7 @@ const MyProfile = () => {
     const res = await axiosPublic.get(
       `/uni-address?email=${user?.email}&name=${user?.displayName}&image=${user?.photoURL}`
     );
-    console.log(res?.data);
+    
     setUniAddress(res?.data);
   };
 
@@ -87,9 +87,6 @@ const MyProfile = () => {
       if (imageData) {
         const formData = new FormData();
         formData.append("image", imageData);
-
-        console.log(imageData);
-
         const res = await axiosPublic.post(image_hosting_api, formData, {
           headers: {
             "content-type": "multipart/form-data",
@@ -108,12 +105,8 @@ const MyProfile = () => {
         "/update-profile-data",
         updateData
       );
-      console.log(response?.data);
 
       if (response.data.modifiedCount) {
-        console.log("profile update from server success");
-
-        console.log(data.name, user?.photoURL);
 
         // Update local user state if needed
         await updateUser({
