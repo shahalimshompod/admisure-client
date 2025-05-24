@@ -28,7 +28,7 @@ const ResearchPaperCard = ({ data }) => {
               </p>
             ))}
           </div>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-x-3.5">
             <div>
               <a href={link} target="_blank">
                 <button className="btn border-none quick font-bold bg-[#FFF4F6] w-32">

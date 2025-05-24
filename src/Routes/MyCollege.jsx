@@ -144,10 +144,10 @@ const MyCollege = () => {
   };
 
   return (
-    <div className="container mx-auto my-36">
+    <div className="container mx-auto my-36 px-4 xl:px-0">
       <div className="flex items-center gap-6 mb-10">
-        <img className="w-36" src={collegeIcon} alt="College Icon" />
-        <h1 className="text-5xl font-bold text-[#890C25] slab">
+        <img className="w-20 md:w-36" src={collegeIcon} alt="College Icon" />
+        <h1 className="text-4xl md:text-5xl font-bold text-[#890C25] slab">
           My Applied Colleges
         </h1>
       </div>

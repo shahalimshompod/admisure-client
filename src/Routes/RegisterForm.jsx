@@ -151,7 +151,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-[#FFF4F6] p-6 rounded-lg shadow-md border border-[#890C25] my-20">
+    <div className="md:max-w-md h-screen md:h-full mx-auto bg-[#FFF4F6] p-6 md:rounded-lg shadow-md md:border border-[#890C25] md:my-20">
       <h2 className="text-3xl font-bold mb-4 text-center slab text-[#890C25]">
         Register
       </h2>

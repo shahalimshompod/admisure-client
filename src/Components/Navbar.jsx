@@ -1,140 +1,104 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import sureIcon from "../assets/icons/sure.png";
-import { FaUserCircle } from "react-icons/fa";
+import { FaUserCircle, FaBars, FaTimes } from "react-icons/fa";
 import { AuthContext } from "../Auth/AuthContextProvider";
 import toast from "react-hot-toast";
 
 const Navbar = () => {
-  // scroll functionalities
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const path = location.pathname;
 
-  // user information
   const { user, userLogout } = useContext(AuthContext);
-  // user info
   const image = user?.photoURL;
 
-  // handle logout user when click logout btn
+  // Toggle hamburger menu
+  const toggleMenu = () => setMenuOpen((prev) => !prev);
+
   const handleLogout = () => {
     userLogout();
-    // toast
-    toast.success("Successfully toasted!");
+    toast.success("Successfully logged out!");
+    setMenuOpen(false);
   };
 
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      if (offset > 200) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(offset > 200);
     };
 
     window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Routes array for reusability
+  const routes = [
+    { path: "/", label: "Home" },
+    { path: "/colleges", label: "Colleges" },
+    ...(user
+      ? [
+          { path: "/admission", label: "Admission" },
+          { path: "/my-college", label: "My College" },
+        ]
+      : []),
+    { path: "/about-us", label: "About Us" },
+  ];
 
   return (
     <div className="shadow-sm">
       <div
         className={`fixed top-0 left-0 right-0 z-50 py-4 ${
           scrolled || path !== "/"
-            ? "bg-[#890C25] transition ease-in"
-            : "bg-transparent ease-in"
+            ? "bg-[#890C25] transition ease-in duration-300"
+            : "bg-transparent transition ease-in duration-300"
         }`}
       >
-        <div className="navbar container mx-auto">
-          <div className="navbar-start">
-            <a href="/">
-              <div className="flex items-center gap-3">
-                <img className="w-12" src={sureIcon} alt="Logo" />
-                <span className="text-3xl text-white slab">Admisure</span>
-              </div>
-            </a>
-          </div>
+        <div className="navbar container mx-auto px-4 flex items-center justify-between">
+          {/* Logo */}
+          <a href="/" className="flex items-center gap-3">
+            <img className="w-10 md:w-12" src={sureIcon} alt="Logo" />
+            <span
+              className="text-white slab font-bold text-xl md:text-3xl"
+              style={{ color: "#FFFFFF" }}
+            >
+              Admisure
+            </span>
+          </a>
 
-          {/* routes */}
-          <div className="navbar-center hidden lg:flex">
-            <ul className="menu menu-horizontal text-white text-lg quick font-bold gap-5">
-              <li>
+          {/* Desktop menu */}
+          <ul className="hidden lg:flex menu-horizontal text-white font-bold quick text-base md:text-lg gap-6">
+            {routes.map(({ path, label }) => (
+              <li key={path}>
                 <NavLink
-                  to="/"
+                  to={path}
                   className={({ isActive }) =>
                     isActive
                       ? "bg-[#FFF4F6] text-[#890C25] rounded-md px-3 py-1"
-                      : "hover:bg-white/20 px-3 py-1 rounded-md"
+                      : "hover:bg-white/20 px-3 py-1 rounded-md transition"
                   }
                 >
-                  Home
+                  {label}
                 </NavLink>
               </li>
-              <li>
-                <NavLink
-                  to="/colleges"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "bg-[#FFF4F6] text-[#890C25] rounded-md px-3 py-1"
-                      : "hover:bg-white/20 px-3 py-1 rounded-md"
-                  }
-                >
-                  Colleges
-                </NavLink>
-              </li>
-              {user ? (
-                <>
-                  <li>
-                    <NavLink
-                      to="/admission"
-                      className={({ isActive }) =>
-                        isActive
-                          ? "bg-[#FFF4F6] text-[#890C25] rounded-md px-3 py-1"
-                          : "hover:bg-white/20 px-3 py-1 rounded-md"
-                      }
-                    >
-                      Admission
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink
-                      to="/my-college"
-                      className={({ isActive }) =>
-                        isActive
-                          ? "bg-[#FFF4F6] text-[#890C25] rounded-md px-3 py-1"
-                          : "hover:bg-white/20 px-3 py-1 rounded-md"
-                      }
-                    >
-                      My College
-                    </NavLink>
-                  </li>
-                </>
-              ) : (
-                ""
-              )}
-              <li>
-                <NavLink
-                  to="/about-us"
-                  className={({ isActive }) =>
-                    isActive
-                      ? "bg-[#FFF4F6] text-[#890C25] rounded-md px-3 py-1"
-                      : "hover:bg-white/20 px-3 py-1 rounded-md"
-                  }
-                >
-                  About Us
-                </NavLink>
-              </li>
-            </ul>
-          </div>
+            ))}
+          </ul>
 
-          {/* profile dropdown */}
-          <div className="navbar-end">
+          {/* Mobile hamburger & profile */}
+          <div className="flex items-center gap-4">
+            {/* Hamburger */}
+            <button
+              onClick={toggleMenu}
+              className="lg:hidden text-white text-2xl focus:outline-none"
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? <FaTimes /> : <FaBars />}
+            </button>
+
+            {/* Profile dropdown */}
             {user ? (
-              <div className="dropdown dropdown-end">
+              <div className="dropdown dropdown-end relative">
                 <div
                   tabIndex={0}
                   role="button"
@@ -148,36 +112,81 @@ const Navbar = () => {
                     )}
                   </div>
                 </div>
+
                 <ul
                   tabIndex={0}
-                  className="menu quick menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-ful p-2 shadow"
+                  className="menu quick menu-sm dropdown-content bg-base-100 rounded-box shadow mt-3 w-fit p-2 z-50"
                 >
-                  <div className="p-2">
-                    <h1 className="font-black text-xl">{user?.displayName}</h1>
-                    <h4 className="font-semibold text-sm">{user?.email}</h4>
-                  </div>
-                  <div className="divider"></div>
+                  {/* User Info */}
+                  <li className="p-">
+                    <h1 className="font-black text-lg truncate">
+                      {user?.displayName}
+                    </h1>
+                    <h4 className="font-semibold text-sm truncate">
+                      {user?.email}
+                    </h4>
+                  </li>
+
+                  {/* Divider */}
+                  <div className="divider my-2"></div>
+
                   <li>
-                    <Link to={"/my-profile"}>
-                      <p className="font-normal text-lg">Profile</p>
+                    <Link to="/my-profile" onClick={() => setMenuOpen(false)}>
+                      <p className="font-normal text-base">Profile</p>
                     </Link>
                   </li>
                   <li>
-                    <p className="font-normal text-lg" onClick={handleLogout}>
+                    <p
+                      className="font-normal text-base cursor-pointer"
+                      onClick={handleLogout}
+                    >
                       Logout
                     </p>
                   </li>
                 </ul>
               </div>
             ) : (
-              <Link to={"/login"}>
-                <button className="btn quick border-none hover:bg-[#FFF4F6]">
+              <Link to="/login" className="hidden lg:block">
+                <button className="btn quick border-none hover:bg-[#FFF4F6] text-[#890C25]">
                   Login
                 </button>
               </Link>
             )}
           </div>
         </div>
+
+        {/* Mobile menu dropdown */}
+        {menuOpen && (
+          <div className="lg:hidden bg-[#890C25] text-white px-6 py-4">
+            <ul className="flex flex-col gap-4 quick font-semibold text-base">
+              {routes.map(({ path, label }) => (
+                <li key={path}>
+                  <NavLink
+                    to={path}
+                    onClick={() => setMenuOpen(false)}
+                    className={({ isActive }) =>
+                      isActive
+                        ? "bg-[#FFF4F6] text-[#890C25] rounded-md px-3 py-1 block"
+                        : "hover:bg-white/20 px-3 py-1 rounded-md block transition"
+                    }
+                  >
+                    {label}
+                  </NavLink>
+                </li>
+              ))}
+
+              {!user && (
+                <li>
+                  <Link to="/login" onClick={() => setMenuOpen(false)}>
+                    <button className="w-full btn quick border-none hover:bg-[#FFF4F6] text-[#890C25]">
+                      Login
+                    </button>
+                  </Link>
+                </li>
+              )}
+            </ul>
+          </div>
+        )}
       </div>
     </div>
   );

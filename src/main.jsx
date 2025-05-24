@@ -29,10 +29,18 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomeLayout />,
+        loader: () => {
+          document.title = "Home | Admisure";
+          return null;
+        },
       },
       {
         path: "/colleges",
         element: <Colleges />,
+        loader: () => {
+          document.title = "Colleges | Admisure";
+          return null;
+        },
       },
       {
         path: "/college-details/:id",
@@ -41,6 +49,10 @@ const router = createBrowserRouter([
             <DetailsPage />
           </SecureRoute>
         ),
+        loader: () => {
+          document.title = "College Details | Admisure";
+          return null;
+        },
       },
       {
         path: "/admission",
@@ -49,6 +61,10 @@ const router = createBrowserRouter([
             <Admission />
           </SecureRoute>
         ),
+        loader: () => {
+          document.title = "Admission | Admisure";
+          return null;
+        },
       },
       {
         path: "/my-profile",
@@ -57,10 +73,18 @@ const router = createBrowserRouter([
             <MyProfile />
           </SecureRoute>
         ),
+        loader: () => {
+          document.title = "My Profile | Admisure";
+          return null;
+        },
       },
       {
         path: "/about-us",
         element: <AboutUs />,
+        loader: () => {
+          document.title = "About Us | Admisure";
+          return null;
+        },
       },
       {
         path: "/my-college",
@@ -69,6 +93,10 @@ const router = createBrowserRouter([
             <MyCollege />
           </SecureRoute>
         ),
+        loader: () => {
+          document.title = "My College | Admisure";
+          return null;
+        },
       },
     ],
   },
@@ -81,7 +109,7 @@ const router = createBrowserRouter([
     ),
     loader: () => {
       document.title = "Login | Admisure";
-      return;
+      return null;
     },
   },
   {
@@ -93,7 +121,7 @@ const router = createBrowserRouter([
     ),
     loader: () => {
       document.title = "Register | Admisure";
-      return;
+      return null;
     },
   },
   {
@@ -101,7 +129,7 @@ const router = createBrowserRouter([
     element: <ForgotPassword />,
     loader: () => {
       document.title = "Forgot Password | Admisure";
-      return;
+      return null;
     },
   },
 ]);
