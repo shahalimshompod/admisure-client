@@ -5,11 +5,16 @@ import useAxiosPublic from "../hooks/useAxiosPublic";
 const HomeClgCardContainer = () => {
   const axiosPublic = useAxiosPublic();
   const [cardData, setCardData] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   // fetch card data
   const fetchData = async () => {
+    setLoading(true);
     const res = await axiosPublic.get("/homeClgList");
-    setCardData(res?.data);
+    if (res?.data) {
+      setCardData(res?.data);
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -41,12 +46,17 @@ const HomeClgCardContainer = () => {
           </p>
         </div>
       </div>
-      <div className="flex items-center gap-20">
-       
-        {
-          cardData.map((data, index) => <CollegeCard data={data} key={index} />)
-        }
-      </div>
+      {loading ? (
+        <div className="flex items-center justify-center max-h-screen">
+          <span className="loading loading-spinner text-error"></span>
+        </div>
+      ) : (
+        <div className="flex items-center gap-20">
+          {cardData.map((data, index) => (
+            <CollegeCard data={data} key={index} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };

@@ -88,6 +88,8 @@ const MyProfile = () => {
         const formData = new FormData();
         formData.append("image", imageData);
 
+        console.log(imageData);
+
         const res = await axiosPublic.post(image_hosting_api, formData, {
           headers: {
             "content-type": "multipart/form-data",

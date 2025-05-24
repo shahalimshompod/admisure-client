@@ -13,8 +13,6 @@ const Navbar = () => {
 
   // user information
   const { user, userLogout } = useContext(AuthContext);
-
-  console.log(user);
   // user info
   const image = user?.photoURL;
 
@@ -161,13 +159,13 @@ const Navbar = () => {
                   <div className="divider"></div>
                   <li>
                     <Link to={"/my-profile"}>
-                      <a className="font-normal text-lg">Profile</a>
+                      <p className="font-normal text-lg">Profile</p>
                     </Link>
                   </li>
                   <li>
-                    <a className="font-normal text-lg" onClick={handleLogout}>
+                    <p className="font-normal text-lg" onClick={handleLogout}>
                       Logout
-                    </a>
+                    </p>
                   </li>
                 </ul>
               </div>

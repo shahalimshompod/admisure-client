@@ -1,23 +1,38 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
+import { AuthContext } from "../Auth/AuthContextProvider";
+
+// IMAGE HOSTING KEY
+const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const Admission = () => {
   const axiosPublic = useAxiosPublic();
   const [clgData, setClgData] = useState([]);
   const [selectedCollege, setSelectedCollege] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [dataFetching, setDataFetching] = useState(false);
+  const { user } = useContext(AuthContext);
+  const userEmail = user?.email;
 
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors, isValid },
+    formState: { isValid },
   } = useForm({ mode: "onChange" }); // `onChange` mode to trigger isValid live
 
   useEffect(() => {
     const fetchData = async () => {
+      setDataFetching(true);
       const res = await axiosPublic.get("/colleges");
-      setClgData(res?.data);
+
+      if (res?.data) {
+        setClgData(res?.data);
+        setDataFetching(false);
+      }
     };
     fetchData();
   }, [axiosPublic]);
@@ -27,14 +42,54 @@ const Admission = () => {
     reset(); // reset form when selecting new college
   };
 
-  const onSubmit = (data) => {
-    const admissionData = {
-      college: selectedCollege,
-      ...data,
+  const onSubmit = async (data) => {
+    setLoading(true);
+    const { dob, address, candidateName, email, image, phone, subject } = data;
+    const finalDataWithoutImg = {
+      dob: dob,
+      address: address,
+      candidateName: candidateName,
+      email: email,
+      phone: phone,
+      subject: subject,
+      selectedCollege: selectedCollege,
+      userEmail: userEmail,
     };
-    console.log("Submitted Data:", admissionData);
-    reset();
-    alert("Admission form submitted successfully!");
+
+    if (image[0].name) {
+      const imgData = { image: image[0] };
+      const res = await axiosPublic.post(image_hosting_api, imgData, {
+        headers: {
+          "content-type": "multipart/form-data",
+        },
+      });
+
+      const candidateImage = res?.data.data.display_url;
+
+      // final data with image
+      const finalData = {
+        ...finalDataWithoutImg,
+        candidateImage,
+      };
+
+      console.log(finalData);
+
+      if (candidateImage) {
+        const res = await axiosPublic.post(
+          "/my-college-application",
+          finalData
+        );
+
+        if (res?.data.insertedId) {
+          toast.success(`Successfully Applied to ${selectedCollege}`);
+          reset();
+          setLoading(false);
+        } else {
+          toast.error(`${res.data.message}`);
+          setLoading(false);
+        }
+      }
+    }
   };
 
   return (
@@ -44,21 +99,27 @@ const Admission = () => {
           Admission Form
         </h1>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-          {clgData.map((college, idx) => (
-            <button
-              key={idx}
-              onClick={() => handleSelect(college?.name)}
-              className={`cursor-pointer p-4 border border-[#890C25] rounded-lg hover:bg-[#FFF4F6] hover:text-black transition duration-300 text-left quick ${
-                selectedCollege === college?.name
-                  ? "bg-[#890C25] text-white"
-                  : "bg-transparent"
-              }`}
-            >
-              {college?.name}
-            </button>
-          ))}
-        </div>
+        {dataFetching ? (
+          <div className="flex items-center justify-center h-[500px]">
+            <span className="loading loading-spinner text-error"></span>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+            {clgData.map((college, idx) => (
+              <button
+                key={idx}
+                onClick={() => handleSelect(college?.name)}
+                className={`cursor-pointer p-4 border border-[#890C25] rounded-lg hover:bg-[#FFF4F6] hover:text-black transition duration-300 text-left quick ${
+                  selectedCollege === college?.name
+                    ? "bg-[#890C25] text-white"
+                    : "bg-transparent"
+                }`}
+              >
+                {college?.name}
+              </button>
+            ))}
+          </div>
+        )}
 
         {selectedCollege && (
           <div className="bg-[#FFF4F6] p-6 rounded-lg shadow-md border border-[#890C25]">
@@ -121,7 +182,11 @@ const Admission = () => {
                     : "bg-gray-400 text-white cursor-not-allowed"
                 }`}
               >
-                Submit
+                {loading ? (
+                  <span className="loading loading-spinner loading-md"></span>
+                ) : (
+                  "Submit Application"
+                )}
               </button>
             </form>
           </div>

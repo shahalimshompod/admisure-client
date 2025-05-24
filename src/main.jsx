@@ -17,6 +17,7 @@ import ForgotPassword from "./Routes/ForgotPassword.jsx";
 import AboutUs from "./Routes/AboutUs.jsx";
 import SecureRoute from "./Routes/SecureRoute.jsx";
 import PreventLoginRegisterRoute from "./Routes/PreventLoginRegisterRoute.jsx";
+import MyCollege from "./Routes/MyCollege.jsx";
 
 const router = createBrowserRouter([
   {
@@ -33,25 +34,45 @@ const router = createBrowserRouter([
       },
       {
         path: "/college-details/:id",
-        element: <SecureRoute><DetailsPage /></SecureRoute>,
+        element: (
+          <SecureRoute>
+            <DetailsPage />
+          </SecureRoute>
+        ),
       },
       {
         path: "/admission",
-        element: <SecureRoute><Admission /></SecureRoute>,
+        element: (
+          <SecureRoute>
+            <Admission />
+          </SecureRoute>
+        ),
       },
       {
         path: "/my-profile",
-        element: <SecureRoute><MyProfile /></SecureRoute>,
+        element: (
+          <SecureRoute>
+            <MyProfile />
+          </SecureRoute>
+        ),
       },
       {
         path: "/about-us",
         element: <AboutUs />,
       },
+      {
+        path: "/my-college",
+        element: <SecureRoute><MyCollege /></SecureRoute>,
+      },
     ],
   },
   {
     path: "/login",
-    element: <PreventLoginRegisterRoute><LoginForm /></PreventLoginRegisterRoute>,
+    element: (
+      <PreventLoginRegisterRoute>
+        <LoginForm />
+      </PreventLoginRegisterRoute>
+    ),
     loader: () => {
       document.title = "Login | Admisure";
       return;
@@ -59,7 +80,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/register",
-    element: <PreventLoginRegisterRoute><RegisterForm /></PreventLoginRegisterRoute>,
+    element: (
+      <PreventLoginRegisterRoute>
+        <RegisterForm />
+      </PreventLoginRegisterRoute>
+    ),
     loader: () => {
       document.title = "Register | Admisure";
       return;
